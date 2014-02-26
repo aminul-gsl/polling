@@ -66,12 +66,12 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="${g.createLink(uri: '/')}">Home</a></li>
                         <sec:access controller='poll'>
-                            <li><a href="${g.createLink(controller: 'poll')}">Poll</a></li>
+                            <li><a href="${g.createLink(controller: 'poll')}">Manage Poll</a></li>
                         </sec:access>
                         <sec:access controller='dashboard'>
                             <li><a href="${g.createLink(controller: 'dashboard')}">My Poll</a></li>
                         </sec:access>
-
+                        <li><a href="${g.createLink(controller: 'showpolls')}">Poll List</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
