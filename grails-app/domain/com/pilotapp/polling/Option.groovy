@@ -1,8 +1,7 @@
 package com.pilotapp.polling
 
 class Option {
-    String name
-    static belongsTo = [question:Question]
+    String description
     static constraints = {
     }
 }

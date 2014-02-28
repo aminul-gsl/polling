@@ -1,9 +1,10 @@
 package com.pilotapp.polling
 
 class Question {
-    String name
-    static belongsTo = [poll:Poll]
+    String description
+    boolean allowMultiple = false
     static hasMany = [option:Option]
     static constraints = {
+        option nullable: true
     }
 }
