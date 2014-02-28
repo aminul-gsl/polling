@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="${resource(dir: 'css/custom', file: 'flexslider.css')}" type="text/css" media="screen">
         <link rel="stylesheet" href="${resource(dir: 'css/custom', file: 'parallax-slider.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css/font-awesome-4.0.3', file: 'font-awesome.min.css')}" type="text/css">
+
     <!-- Custom styles for this template -->
 
     <link href="${resource(dir: 'css/custom', file: 'business-plate.css')}" rel="stylesheet">
@@ -65,6 +66,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="${g.createLink(uri: '/')}">Home</a></li>
+
                         <sec:access controller='poll'>
                             <li><a href="${g.createLink(controller: 'poll')}">Manage Poll</a></li>
                         </sec:access>
@@ -171,11 +173,13 @@
     <script type="text/javascript" src="${resource(dir: 'js/bootstrap', file: 'bootstrap.min.js')}"></script>
 
     <!-- JS Implementing Plugins -->
+    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'repeatable-fields.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.flexslider-min.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'modernizr.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.cslider.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'back-to-top.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.sticky.js')}"></script>
+
 
     <!-- JS Page Level -->
     %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'app.js')}"></script>--}%
@@ -188,6 +192,7 @@
             App.initSliders();
             Index.initParallaxSlider();
         });
+
     </script>
 
 <r:layoutResources />
