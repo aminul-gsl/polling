@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="${resource(dir: 'css/custom', file: 'parallax-slider.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css/font-awesome-4.0.3', file: 'font-awesome.min.css')}" type="text/css">
 
+        %{--css for pop up--}%
+        <link rel="stylesheet" href="${resource(dir: 'css/custom/popup', file: 'jquery.ui.all.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css/custom/popup', file: 'demos.css')}" type="text/css">
+        <!-- Custom styles for this template -->
     <!-- Custom styles for this template -->
 
     <link href="${resource(dir: 'css/custom', file: 'business-plate.css')}" rel="stylesheet">
@@ -184,6 +188,19 @@
     <!-- JS Page Level -->
     %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'app.js')}"></script>--}%
     <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'index.js')}"></script>
+
+        %{--js for pop up--}%
+
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.core.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.widget.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.mouse.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.button.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.draggable.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.position.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.resizable.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.button.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.dialog.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.effect.js')}"></script>
 
 
     <script type="text/javascript">
