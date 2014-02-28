@@ -27,7 +27,7 @@ background-color: rgba(255, 255, 255, 0.95);
 .top {
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #E9E9E9;
+    background-color: #212121;
 	z-index:9999;
 }
 .top .container {
@@ -209,7 +209,7 @@ transition: all 0.3s ease-out;
 }
 .blockquote {border-left: 5px solid #FF792D;}
 /* Toggle menu */
-.navbar-collapse {background: #fff;z-index: 9999;}
+.navbar-collapse {background: #F7F7F7;z-index: 9999;}
 .navbar-toggle {border-radius: 0;outline:0}
 .navbar-toggle span {border-color: #ff0000;background: red;}
 .nav>li>a:hover, .nav>li>a:focus {text-decoration: none;background-color: #fff;}

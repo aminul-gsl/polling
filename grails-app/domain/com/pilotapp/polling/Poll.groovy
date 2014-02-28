@@ -3,7 +3,7 @@ package com.pilotapp.polling
 import com.pilotapp.polling.security.User
 
 class Poll {
-    String name
+//    String name
     String description
     boolean status = false
     Date createDate
@@ -12,5 +12,6 @@ class Poll {
     static hasMany = [question:Question]
     static constraints = {
         description nullable: true
+        question nullable: true
     }
 }
