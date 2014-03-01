@@ -9,9 +9,14 @@ class PollController {
         redirect(action: 'show')
     }
     def show() {
-    render(view: 'pollList')
+    render(view: 'create')
     }
     def create() {
+        Poll poll=new Poll()
+        poll.name=params.pollName
+        poll.description=params.description
+        poll.createDate=new Date();
+       poll.save()
     render (view: 'create')
     }
     def save() {
