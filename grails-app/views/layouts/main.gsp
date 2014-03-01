@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="${resource(dir: 'css/custom', file: 'flexslider.css')}" type="text/css" media="screen">
         <link rel="stylesheet" href="${resource(dir: 'css/custom', file: 'parallax-slider.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css/font-awesome-4.0.3', file: 'font-awesome.min.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css/bootstrap/', file: 'bootstrap-modal.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css/bootstrap', file: 'bootstrap-modal-bs3patch.css')}" type="text/css">
 
         %{--css for pop up--}%
         %{--<link rel="stylesheet" href="${resource(dir: 'css/custom/popup', file: 'jquery.ui.all.css')}" type="text/css">--}%

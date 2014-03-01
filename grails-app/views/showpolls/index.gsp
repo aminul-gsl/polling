@@ -26,10 +26,48 @@
 <div class="testimonails">
     <div class="container">
         <div class="col-md-8 col-lg-push-2">
-            <p>Total poll created : 10</p>
-            <p>Highest User take part : 1000</p>
+            <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+                <div class="modal-body">
+
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="pollName" class="col-sm-2 control-label">Poll Name </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="pollName" placeholder="Write The Poll Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-2 control-label">Description </label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <div class="checkbox">
+                                  <label>
+                                      Status <input type="checkbox">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary" >Create Poll</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        <div class="text-center">
+            <button class="demo btn btn-primary btn-lg" data-toggle="modal" href="#static">Add a Poll</button>
         </div>
       </div>
+    </div>
+
 </div>
 
 <div class="container">
@@ -143,6 +181,11 @@
 
 
 <!-- clientSection -->
+    <script type="text/javascript">
+            $(document).ready(function(){
+            $("#myModal").modal('show');
+            });
+    </script>
 <script type="text/javascript">
     jQuery(function() {
             jQuery('.repeat').each(function() {
@@ -236,6 +279,27 @@
                 });
     });
 </script>
+<script id="dynamic" type="text/javascript">
+    $('.dynamic .demo').click(function(){
+        var tmpl = [
+            // tabindex is required for focus
+            '<div class="modal hide fade" tabindex="-1">',
+            '<div class="modal-header">',
+            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>',
+            '<h4 class="modal-title">Modal header</h4>',
+            '</div>',
+            '<div class="modal-body">',
+            '<p>Test</p>',
+            '</div>',
+            '<div class="modal-footer">',
+            '<a href="#" data-dismiss="modal" class="btn btn-default">Close</a>',
+            '<a href="#" class="btn btn-primary">Save changes</a>',
+            '</div>',
+            '</div>'
+        ].join('');
 
+        $(tmpl).modal();
+    });
+</script>
 </body>
 </html>
