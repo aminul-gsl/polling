@@ -21,4 +21,12 @@ class ShowpollsController {
         }
         render (view: 'participateInPole',model: [aPoll:aPoll])
     }
+    @Secured(['ROLE_ADMIN','ROLE_USER'])
+    def savePoll(){
+        println params
+        if (request.method == 'POST') {
+
+        }
+        redirect(action:'index')
+    }
 }

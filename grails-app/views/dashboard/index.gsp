@@ -2,16 +2,25 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Polling App - Available Poll</title>
+    <title>Polling App - My Participant Polls</title>
+
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h4 style="color: #FF4800;" >Available Poll's. Please Participate</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 style="color: #FF4800;" >My Participant Polls</h4>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+
             </div>
         </div>
     </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -27,15 +36,15 @@
                     </tr>
                     </thead>
                     <tbody id="myTable">
-                        <g:each status="i" in="${pollList}" var="poll">
-                            <tr>
-                                <td>${i+1}</td>
-                                <td><g:formatDate format="yyyy-MM-dd" date="${poll.createDate}"/></td>
-                                <td>${poll.description}</td>
-                                <td>${poll.pollCount}</td>
-                                <td><a href="${g.createLink(action: 'participate',id: poll.id)}" class="btn btn-success">Participate</a></td>
-                            </tr>
-                        </g:each>
+                    <g:each status="i" in="${pollList}" var="poll">
+                        <tr>
+                            <td>${i+1}</td>
+                            <td><g:formatDate format="yyyy-MM-dd" date="${poll.createDate}"/></td>
+                            <td>${poll.description}</td>
+                            <td>${poll.pollCount}</td>
+                            <td><a href="#" class="btn btn-success">View Details</a></td>
+                        </tr>
+                    </g:each>
 
 
                     </tbody>
@@ -156,5 +165,7 @@
 
     });
 </r:script>
+
+
 </body>
 </html>

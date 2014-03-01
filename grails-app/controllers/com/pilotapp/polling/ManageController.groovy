@@ -1,19 +1,28 @@
 package com.pilotapp.polling
 
+import com.pilotapp.polling.security.User
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ROLE_ADMIN'])
-class PollController {
-
+class ManageController {
+    def springSecurityService
     def index() {
-        redirect(action: 'show')
+        def user = User.get(springSecurityService.principal.id)
+        def pollList = Poll.findAllByUser(user);
+        println(pollList.size())
+        // This page will list all active poll
+        render (view: 'index',model: [pollList:pollList])
     }
-    def show() {
-    render(view: 'create')
+    def participants(Long id) {
+        Poll aPoll = Poll.read(id)
+        if(!aPoll){
+            redirect(action: 'index')
+        }
+        def userList = User.findAll()
+    render(view: 'participantList',model: [userList:userList,aPoll:aPoll])
     }
     def create() {
         Poll poll=new Poll()
-        poll.name=params.pollName
         poll.description=params.description
         poll.createDate=new Date();
        poll.save()

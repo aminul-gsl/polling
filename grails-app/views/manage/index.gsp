@@ -2,13 +2,25 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Polling App - Available Poll</title>
+    <title>Polling App - Manage Poll</title>
+
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 style="color: #FF4800;" >Available Poll's. Please Participate</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 style="color: #FF4800;" >View Poll Participant and Details</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>
+                            <a href="#CreatePoleForm" data-toggle="modal" class="btn btn-success pull-right">Create New Poll</a>
+                        </h4>
+
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -23,19 +35,21 @@
                         <th>Created On</th>
                         <th>Description</th>
                         <th>Total Participant</th>
+                        <th>Published</th>
                         <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody id="myTable">
-                        <g:each status="i" in="${pollList}" var="poll">
-                            <tr>
-                                <td>${i+1}</td>
-                                <td><g:formatDate format="yyyy-MM-dd" date="${poll.createDate}"/></td>
-                                <td>${poll.description}</td>
-                                <td>${poll.pollCount}</td>
-                                <td><a href="${g.createLink(action: 'participate',id: poll.id)}" class="btn btn-success">Participate</a></td>
-                            </tr>
-                        </g:each>
+                    <g:each status="i" in="${pollList}" var="poll">
+                        <tr>
+                            <td>${i+1}</td>
+                            <td><g:formatDate format="yyyy-MM-dd" date="${poll.createDate}"/></td>
+                            <td>${poll.description}</td>
+                            <td>${poll.pollCount}</td>
+                            <td>${poll.status}</td>
+                            <td><a href="${g.createLink(action: 'participants',id: poll.id)}" class="btn btn-success">View Participants</a></td>
+                        </tr>
+                    </g:each>
 
 
                     </tbody>
@@ -156,5 +170,15 @@
 
     });
 </r:script>
+<div id="CreatePoleForm" class="modal hide fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-body">
+        <p>Would you like to continue with some arbitrary task?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+        <button type="button" data-dismiss="modal" class="btn btn-primary">Continue Task</button>
+    </div>
+</div>
+
 </body>
 </html>

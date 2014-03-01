@@ -1,12 +1,17 @@
 package com.pilotapp.polling
 
+import com.pilotapp.polling.security.User
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ROLE_USER'])
 class DashboardController {
 
     def index() {
-        redirect(action: 'show')
+//        def user = User.get(springSecurityService.principal.id)
+        def pollList = Poll.findAll();
+//        println(pollList.size())
+        // This page will list all active poll
+        render (view: 'index',model: [pollList:pollList])
     }
     def show() {
         render (view: 'index')

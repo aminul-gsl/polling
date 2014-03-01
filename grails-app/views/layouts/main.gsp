@@ -25,9 +25,15 @@
         <g:javascript library="application"/>
         <r:require modules="jquery"/>
         <r:layoutResources />
+        <style type="text/css">
+            body {
+                /*height: 100%;*/
+                overflow-x: hidden;
+            }
+        </style>
 	</head>
 	    <body>
-    <div class="top">
+        <div class="top">
         <div class="container">
             <div class="row-fluid">
                 <ul class="phone-mail">
@@ -73,8 +79,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="${g.createLink(uri: '/')}">Home</a></li>
 
-                        <sec:access controller='poll'>
-                            <li><a href="${g.createLink(controller: 'poll')}">Manage Poll</a></li>
+                        <sec:access controller='manage'>
+                            <li><a href="${g.createLink(controller: 'manage')}">Manage Poll</a></li>
                         </sec:access>
                         <sec:access controller='dashboard'>
                             <li><a href="${g.createLink(controller: 'dashboard')}">My Poll</a></li>
@@ -90,9 +96,8 @@
 
         <g:layoutBody/>
 
-
     <!-- footerTopSection -->
-    <div class="footerTopSection">
+    %{--<div class="footerTopSection">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -164,7 +169,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}%
     <!-- footerBottomSection -->
     <div class="footerBottomSection">
         <div class="container">
@@ -175,34 +180,34 @@
 
     <!-- JS Global Compulsory -->
     %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery-1.8.2.min.js')}"></script>--}%
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'modernizr.custom.js')}"></script>
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'modernizr.custom.js')}"></script>--}%
     <script type="text/javascript" src="${resource(dir: 'js/bootstrap', file: 'bootstrap.min.js')}"></script>
 
     <!-- JS Implementing Plugins -->
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'repeatable-fields.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.flexslider-min.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'modernizr.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.cslider.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'back-to-top.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.sticky.js')}"></script>
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'repeatable-fields.js')}"></script>--}%
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.flexslider-min.js')}"></script>--}%
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'modernizr.js')}"></script>--}%
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.cslider.js')}"></script>--}%
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'back-to-top.js')}"></script>--}%
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'jquery.sticky.js')}"></script>--}%
 
 
     <!-- JS Page Level -->
     %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'app.js')}"></script>--}%
-    <script type="text/javascript" src="${resource(dir: 'js/custom', file: 'index.js')}"></script>
+    %{--<script type="text/javascript" src="${resource(dir: 'js/custom', file: 'index.js')}"></script>--}%
 
         %{--js for pop up--}%
 
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.core.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.widget.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.mouse.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.button.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.draggable.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.position.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.resizable.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.button.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.dialog.js')}"></script>
-        <script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.effect.js')}"></script>
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.core.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.widget.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.mouse.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.button.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.draggable.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.position.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.resizable.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.button.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.dialog.js')}"></script>--}%
+        %{--<script type="text/javascript" src="${resource(dir: 'js/custom/popup', file: 'jquery.ui.effect.js')}"></script>--}%
 
 
     %{--<script type="text/javascript">

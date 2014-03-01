@@ -2,16 +2,16 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Polling App - Available Poll</title>
+    <title>Polling App - Participant List</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h4 style="color: #FF4800;" >Available Poll's. Please Participate</h4>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 style="color: #FF4800;" >${aPoll.description}</h4>
         </div>
     </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -20,22 +20,20 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Created On</th>
-                        <th>Description</th>
-                        <th>Total Participant</th>
+                        <th>Participate On</th>
+                        <th>Email Address</th>
                         <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody id="myTable">
-                        <g:each status="i" in="${pollList}" var="poll">
-                            <tr>
-                                <td>${i+1}</td>
-                                <td><g:formatDate format="yyyy-MM-dd" date="${poll.createDate}"/></td>
-                                <td>${poll.description}</td>
-                                <td>${poll.pollCount}</td>
-                                <td><a href="${g.createLink(action: 'participate',id: poll.id)}" class="btn btn-success">Participate</a></td>
-                            </tr>
-                        </g:each>
+                    <g:each status="i" in="${userList}" var="user">
+                        <tr>
+                            <td>${i+1}</td>
+                            <td><g:formatDate format="yyyy-MM-dd" date="${new java.util.Date()}"/></td>
+                            <td>${user.username}</td>
+                            <td><a href="#" class="btn btn-success">Poll Details</a></td>
+                        </tr>
+                    </g:each>
 
 
                     </tbody>
